@@ -1,0 +1,331 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Artingo</title>
+  </head>
+  
+
+  <body>
+    <!-- Quick Links Button -->
+  <button class="open-popup">Quick Links</button>
+  <!-- Popup Modal -->
+  <div class="popup" id="popup">
+      <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <h2>Quick Links</h2>
+          <ul>
+              <li><a href="/services/bakery.html">🍞 Bakery</a></li>
+              <li><a href="photography.html">📸 Photography</a></li>
+              <li><a href="clothing.html">👗 Clothing</a></li>
+              <li><a href="home-decor.html">🏠 Home Decor</a></li>
+              <li><a href="services.html">🏠 Home Decor</a></li>
+          </ul>
+      </div>
+  </div>
+
+      <!-- USER BAR -->
+      <div id="user-bar" style="display: none; padding: 1rem; background: rgb(97, 96, 96); text-align: right; font-size: large; font-family: 'Courier New', Courier, monospace;">
+        <span id="user-greeting" style="margin-right: 10px;"></span>
+        <button id="logout-btn" style="background-color: #ff4e50; color: white; border: none; padding: 8px 12px; border-radius: 8px;">Logout</button>
+      </div>
+      
+
+    <!-- Header -->
+    <!-- Header -->
+<section id="header">
+  <div class="header container">
+    <div class="nav-bar">
+      <div class="brand">
+        <a href="#hero">
+          <h1>Artingo</h1>
+        </a>
+      </div>
+      <div class="nav-list">
+        <div class="hamburger">
+          <div class="bar"></div>
+        </div>
+        <ul class="nav-items">
+          <li><a href="#hero" data-after="Home">Home</a></li>
+          <li><a href="#services" data-after="Services">Services</a></li>
+          <li><a href="#about" data-after="About">About</a></li>
+          <li><a href="/authentication/signup.html" data-after="Subscribe">Sign up</a></li>
+          <li><a href="/authentication/login.html" data-after="Login">Login</a></li>
+          <li><a href="#contact" data-after="Contact">Contact</a></li>
+          <li class="nav-search">
+            <form id="search-form">
+              <input type="text" id="search-input" placeholder="Search Services..." />
+              <button type="submit">
+                <img src="https://img.icons8.com/bubbles/24/000000/search.png" alt="Search" />
+              </button>
+            </form>
+          </li>
+          
+          <li id="cart-icon">
+            <a href="/services/cart.html">
+              🛒 Cart
+              <span id="cart-count"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- End Header -->
+
+
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero container">
+        <div>
+          <h1>Hello, <span></span></h1>
+          <h1>Welcome To <span></span></h1>
+          <h1>Online Market <span></span></h1>
+          <a href="#projects" type="button" class="cta">Portfolio</a>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="services container">
+        <div class="service-top">
+          <h1 class="section-title">Serv<span>i</span>ces</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum deleniti maiores pariatur assumenda quas
+            magni et, doloribus quod voluptate quasi molestiae magnam officiis dolorum, dolor provident atque molestias
+            voluptatum explicabo!</p>
+          <!-- Category Filters -->
+          <div class="category-filters">
+            <button class="filter-btn active" data-category="all" onclick="window.location.href='services.html'">All</button>
+            <button class="filter-btn" data-category="bakery" onclick="window.location.href='/services/bakery.html'">Bakery</button>
+            <button class="filter-btn" data-category="photography"   onclick="window.location.href='/services/photography.html'">Photography</button>
+            <button class="filter-btn" data-category="clothing"  onclick="window.location.href='/services/Clothing.html'">Clothing</button>
+            <button class="filter-btn" data-category="home-decor"  onclick="window.location.href='/services/homedecoratives.html'">Home Decoratives</button>
+          </div>
+        </div>
+        <div class="service-bottom">
+          <!-- Service Items with Data Categories -->
+          <div class="service-item" data-category="bakery">
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="Bakery Icon"  onclick="window.location.href='/services/bakery.html'"/></div>
+            <h2>Bakery</h2>
+            <p  onclick="window.location.href='/services/bakery.html'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+              architecto placeat beatae tenetur officia quod </p>
+          </div>
+          <div class="service-item" data-category="photography">
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="Photography Icon"   onclick="window.location.href='/services/photography.html'"/></div>
+            <h2>Photography</h2>
+            <p  onclick="window.location.href='/services/bakery.html'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+              architecto placeat beatae tenetur officia quod</p>
+          </div>
+          <div class="service-item" data-category="clothing">
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="Clothing Icon"   onclick="window.location.href='/services/Clothing.html'"/></div>
+            <h2>Clothing</h2>
+            <p  onclick="window.location.href='/services/Clothing.html'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+              architecto placeat beatae tenetur officia quod</p>
+          </div>
+          <div class="service-item" data-category="home-decor">
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="Home Decor Icon"   onclick="window.location.href='/services/homedecoratives.html'"/></div>
+            <h2>Home Decoratives</h2>
+            <p  onclick="window.location.href='/services/homedecoratives.html'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+              architecto placeat beatae tenetur officia quod</p>
+          </div>
+          <!-- Add more service items as needed with appropriate data-category -->
+        </div>
+      </div>
+    </section>
+    <!-- End Services Section -->
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="projects container">
+        <div class="projects-header">
+          <h1 class="section-title">Products</h1>
+        </div>
+        
+        
+        <div class="all-projects">
+          <div class="project-item">
+            <div class="project-info">
+              <h1>Products</h1>
+              <h2>ABCDS</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
+                rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
+                harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+            </div>
+            <div class="project-img">
+              <img src="./img/img-1.png" alt="Project Image">
+            </div>
+          </div>
+          <!-- Repeat similar project items as needed -->
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- End Projects Section -->
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="about container">
+        <div class="col-left">
+          <div class="about-img">
+            <img src='https://img.freepik.com/free-vector/cash-delivery_569841-168.jpg' alt="About Us Image">
+          </div>
+        </div>
+        <div class="col-right">
+          <h1 class="section-title">About us</h1>
+          <h2>Front End Developer</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, velit alias eius non illum beatae atque
+            repellat ratione qui veritatis repudiandae adipisci maiores. At inventore necessitatibus deserunt
+            exercitationem cumque earum omnis ipsum rem accusantium quis, quas quia, accusamus provident suscipit magni!
+            Expedita sint ad dolore, commodi labore nihil velit earum ducimus nulla quae nostrum fugit aut, deserunt
+            reprehenderit libero enim!</p>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="contact container">
+        <div>
+          <h1 class="section-title">Contact <span>info</span></h1>
+        </div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" alt="Phone Icon" /></div>
+            <div class="contact-info">
+              <h1>Phone</h1>
+              <h2>+1 234 123 1234</h2>
+              <h2>+1 234 123 1234</h2>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" alt="Email Icon" /></div>
+            <div class="contact-info">
+              <h1>Email</h1>
+              <h2>info@gmail.com</h2>
+              <h2>abcd@gmail.com</h2>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" alt="Address Icon" /></div>
+            <div class="contact-info">
+              <h1>Address</h1>
+              <h2>Chandigarh</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Footer -->
+    <section id="footer">
+      <div class="footer container">
+        <div class="brand">
+          <h1>Artingo</h1>
+        </div>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum doloremque.</h2>
+        <div class="social-icon">
+          <div class="social-item">
+            <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" alt="Facebook" /></a>
+          </div>
+          <div class="social-item">
+            <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" alt="Instagram" /></a>
+          </div>
+          <!-- Add more social icons as needed -->
+        </div>
+        <p>Copyright © 2023 Artingo.</p>
+      </div>
+    </section>
+    <!-- End Footer -->
+
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const popup = document.getElementById("popup");
+      const openBtn = document.querySelector(".open-popup");
+      const closeBtn = document.querySelector(".close-btn");
+
+      // Open Popup
+      openBtn.addEventListener("click", function () {
+          popup.style.display = "flex";
+      });
+
+      // Close Popup
+      closeBtn.addEventListener("click", function () {
+          popup.style.display = "none";
+      });
+
+      // Close Popup When Clicking Outside
+      window.addEventListener("click", function (event) {
+          if (event.target === popup) {
+              popup.style.display = "none";
+          }
+      });
+  });
+
+  // JavaScript for user-bar and logout
+  document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("popup");
+    const openBtn = document.querySelector(".open-popup");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // Quick Links Popup
+    openBtn.addEventListener("click", () => popup.style.display = "flex");
+    closeBtn.addEventListener("click", () => popup.style.display = "none");
+    window.addEventListener("click", event => {
+      if (event.target === popup) popup.style.display = "none";
+    });
+
+    // User Bar Handling
+    const userBar = document.getElementById('user-bar');
+    const greeting = document.getElementById('user-greeting');
+    const loggedInUser = JSON.parse(localStorage.getItem('user'));
+
+    console.log("User in localStorage:", loggedInUser); // DEBUG
+
+    if (loggedInUser && loggedInUser.name) {
+      greeting.textContent = `Welcome, ${loggedInUser.name}!`;
+      userBar.style.display = 'block';
+    } else {
+      userBar.style.display = 'none';
+    }
+
+    // Logout Button
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('user');
+        window.location.href = "./authentication/login.html";
+      });
+    }
+  });
+
+
+
+  
+  // Update cart count on page load
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").innerText = cart.length.toString().padStart(2, "0");
+  });
+
+
+  </script>
+
+  </body>
+
+  </html>

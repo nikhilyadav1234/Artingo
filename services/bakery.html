@@ -1,0 +1,195 @@
+<!-- Example: Bakery Service Page -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Bakery Services - Artingo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        }
+        #service-detail img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    .cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        margin: 20px auto 0 auto; /* Center horizontally */
+        background-color: #3f1397;
+        color: white;
+        width: 400px;
+        text-decoration: none;
+        border-radius: 5px;
+        height: 71px;
+        width: 40px;
+    }
+
+        .cta:hover {
+            background-color: #e65c00;
+        }
+        #img{
+            height: 280px;
+            width: 20%;
+        }
+
+
+        .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 260px;
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .service-card h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+    }
+
+    .service-card p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .service-card button {
+      margin-top: 10px;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .service-card button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #ff6a8a, #f89fbc);
+    }
+
+    .view-cart-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.view-cart-btn {
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  color: white;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.view-cart-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #2bc0e4, #526bf4);
+}
+
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="/index.html">
+                        <h1>Artingo</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="services">
+
+        <!-- Service 1 -->
+        <div class="service-card">
+          <img src="https://source.unsplash.com/300x200/?cake" alt="Cake" />
+          <h3>Chocolate Cake</h3>
+          <p>Bakery</p>
+          <p>₹299</p>
+          <button onclick="addToCart('Chocolate Cake', 'Bakery', 299, 'https://source.unsplash.com/300x200/?cake')">Add to Cart</button>
+        </div>
+    
+        <!-- Service 2 -->
+        <div class="service-card">
+          <img src="https://source.unsplash.com/300x200/?tshirt" alt="T-Shirt" />
+          <h3>Printed T-shirt</h3>
+          <p>Clothing</p>
+          <p>₹499</p>
+          <button onclick="addToCart('Printed T-shirt', 'Clothing', 499, 'https://source.unsplash.com/300x200/?tshirt')">Add to Cart</button>
+        </div>
+    
+        <!-- Service 3 -->
+        <div class="service-card">
+          <img src="https://source.unsplash.com/300x200/?decor" alt="Decor" />
+          <h3>Wall Art Decor</h3>
+          <p>Home Decor</p>
+          <p>₹650</p>
+          <button onclick="addToCart('Wall Art Decor', 'Home Decor', 650, 'https://source.unsplash.com/300x200/?decor')">Add to Cart</button>
+        </div>
+    
+     <!-- Service 4 -->
+        <div class="service-card">
+          <img src="https://source.unsplash.com/300x200/?cake" alt="Chocolate Cake">
+          <h3>Chocolate shake</h3>
+          <p>Delicious bakery item</p>
+          <p>₹299</p>
+          <button onclick="addToCart('Chocolate Cake', 'Bakery', 299, 'https://source.unsplash.com/300x200/?cake')">Add to Cart</button>
+        </div>
+         <!-- Service 5 -->
+        <div class="service-card">
+          <img src="https://source.unsplash.com/300x200/?photography" alt="Photo Shoot">
+          <h3>Photo Shoot</h3>
+          <p>Capturing memories</p>
+          <p>₹999</p>
+          <button onclick="addToCart('Photo Shoot', 'Photography', 999, 'https://source.unsplash.com/300x200/?photography')">Add to Cart</button>
+        </div>
+    
+    <a href="/index.html" class="cta">Back to Home</a>
+</body>
+
+</html>

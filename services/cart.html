@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart - Artingo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../services.html">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: rgba(193, 62, 62, 0.1);
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #c33764;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      padding: 15px 0;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .item-info {
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    .item-info h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .item-info p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+    }
+
+    .quantity input {
+      width: 50px;
+      padding: 5px;
+      text-align: center;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+    }
+
+    .remove-btn {
+      background-color: crimson;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-left: 20px;
+    }
+
+    .remove-btn:hover {
+      background-color: #8b0000;
+    }
+
+    .total {
+      text-align: right;
+      margin-top: 30px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .checkout-btn {
+      display: block;
+      margin: 30px auto 0;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .checkout-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .empty {
+      text-align: center;
+      color: #666;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Cart 🛒</h1>
+    <div id="cart-items"></div>
+    <div class="total">Total: ₹<span id="total-price">0.00</span></div>
+    <!-- <button onclick="addToCart('Chocolate Cake', 'Bakery', 299, 'https://source.unsplash.com/300x200/?cake')" >Add to Cart</button> -->
+
+    <button class="checkout-btn" onclick="window.location.href='../checkout.html'">Proceed to Checkout</button>
+</div>
+
+
+
+  <script>
+ function updateTotal() {
+  const inputs = document.querySelectorAll('.quantity input');
+  let total = 0;
+  inputs.forEach((input, index) => {
+    const price = parseFloat(input.dataset.price);
+    const qty = parseInt(input.value);
+    total += price * qty;
+  });
+  document.getElementById('total-price').textContent = total.toFixed(2);
+}
+
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  location.reload();
+}
+
+window.onload = function () {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartContainer = document.getElementById('cart-items');
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = `<p class="empty">Your cart is empty. Go back and add something beautiful! 🧡</p>`;
+    document.querySelector(".checkout-btn").style.display = "none";
+    return;
+  }
+
+  cart.forEach((item, index) => {
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" />
+      <div class="item-info">
+        <h3>${item.name}</h3>
+        <p>${item.category}</p>
+        <p>₹${item.price}</p>
+      </div>
+      <div class="quantity">
+        Qty:
+        <input type="number" value="1" min="1" data-price="${item.price}" onchange="updateTotal()" />
+      </div>
+      <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+    `;
+    cartContainer.appendChild(div);
+  });
+
+  updateTotal();
+}
+
+    window.onload = loadCart;
+
+
+    function addToCart(name, category, price, image) {
+  // LocalStorage se pehle ka cart uthaao
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Product ko cart mein add karo
+  cart.push({ name, category, price, image });
+
+  // LocalStorage mein wapas save karo
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Alert ya notification
+  alert(`${name} added to cart! 🎉`);
+}
+
+
+window.onload = () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const container = document.querySelector('.container');
+  let total = 0;
+
+  cart.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" />
+      <div class="item-info">
+        <h3>${item.name}</h3>
+        <p>${item.category}</p>
+        <p>₹${item.price}</p>
+      </div>
+      <div class="quantity">
+        Qty:
+        <input type="number" value="1" min="1" onchange="updateTotal()" />
+      </div>
+      <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+    `;
+    container.insertBefore(div, document.querySelector('.total'));
+    total += item.price;
+  });
+
+  document.getElementById('total-price').textContent = total.toFixed(2);
+};
+
+  </script>
+</body>
+</html>
